@@ -1,0 +1,69 @@
+{
+  "name": "react-es6-starter",
+  "version": "0.0.1",
+  "description": "Bootstrap for a fresh react project",
+  "main": "public/js/index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/karma start",
+    "debugger": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LandRover/react-es6-starter.git"
+  },
+  "author": "Oleg Glozman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LandRover/react-es6-starter/issues"
+  },
+  "homepage": "https://github.com/LandRover/react-es6-starter",
+  "devDependencies": {
+    "grunt": "0.4.5",
+
+    "grunt-banner": "0.3.1",
+    "grunt-contrib-clean": "0.6.0",
+    "grunt-contrib-jshint": "0.11.2",
+    "grunt-contrib-uglify": "0.9.1",
+    "grunt-contrib-watch": "0.6.1",
+
+    "grunt-jsonlint": "1.0.4",
+
+    "grunt-webpack": "1.0.11",
+    "html-loader": "0.3.0",
+    "url-loader": "0.5.6",
+    "babel-loader": "5.3.2",
+    "exports-loader": "~0.6.2",
+    "imports-loader": "~0.6.3",
+    "expose-loader": "~0.7.0",
+    "script-loader": "~0.6.1",
+
+    "native-promise-only": "0.7.8-a",
+    "load-grunt-config": "~0.16.0",
+    "load-grunt-tasks": "~3.1.0",
+    "time-grunt": "~1.0.0",
+
+    "chai": "~3.3.0",
+    "core-js": "~1.1.4",
+    "eslint": "~1.4.3",
+    "eslint-loader": "~1.0.0",
+    "eslint-plugin-react": "~3.4.1",
+
+    "karma": "~0.13.10",
+    "karma-chai": "~0.1.0",
+    "karma-chai-plugins": "~0.6.0",
+    "karma-chai-sinon": "~0.1.5",
+    "karma-chrome-launcher": "~0.2.0",
+    "karma-mocha": "~0.2.0",
+    "karma-mocha-reporter": "~1.1.1",
+    "karma-phantomjs-launcher": "~0.2.1",
+    "karma-sinon": "~1.0.4",
+    "karma-sinon-chai": "~1.1.0",
+    "karma-sourcemap-loader": "~0.3.5",
+    "karma-webpack": "~1.7.0",
+    "webpack-dev-server": "1.11.0",
+    "react": "~0.14.0",
+    "react-addons-test-utils": "~0.14.0",
+    "react-dom": "~0.14.0",
+    "react-hot-loader": "~1.1.5"
+  }
+}
