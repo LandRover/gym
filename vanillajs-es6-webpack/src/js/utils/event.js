@@ -39,10 +39,14 @@ export default class Event {
         context = context || this;
         
         // allows to subscribe multiple events for the same callback as single events. Clears the syntax on the other end.
-        if (_.isArray(name)) {
-            return _.each(name, function(eventName) {
+        if (Array.isArray(name)) {
+            for (var i = 0, len = name.length, eventName; i < len; i++) {
+                eventName = name[i];
                 this.on(eventName, callback, context);
-            }, this);
+            }
+            
+            //quit after done.
+            return true;
         }
         
         if ('undefined' === typeof(this._subscriptions[name]))
@@ -93,13 +97,14 @@ export default class Event {
     * @param {Object} params
     */
     fire(name, params) {
-        var events = this._subscriptions[name] || [];
+        let events = this._subscriptions[name] || [];
         
         console.log(['EVENT::FIRE', name, params]);
         
-        _.each(events, function(event) {
+        for (var i = 0, len = events.length, event; i < len; i++) {
+            event = events[i];
             event.callback.call(event.context, params);
-        });
+        }
     }
     
     
@@ -118,11 +123,13 @@ export default class Event {
                 return (cb === callback || cb._originalCallback === callback)
             };
         
-        _.each(events, function(event, i) {
+        for (var i = 0, len = events.length, event; i < len; i++) {
+            event = events[i];
+            
             if (matchCallback(event.callback)) {
                 events.splice(i, 1);
             }
-        });
+        }
         
         // if no callbacks left remove the event name from the tree completly.
         if (0 === events.length) {
