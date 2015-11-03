@@ -57,7 +57,7 @@ return /******/ (function(modules) { // webpackBootstrap
   \*****************/
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(/*! /home/nodegit/public_html/react-es6-starter/src/bootstrap.js */1);
+	module.exports = __webpack_require__(/*! /home/nodegit/public_html/gym/react-es6-webpack/src/bootstrap.js */1);
 
 
 /***/ },
@@ -79,12 +79,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _Component = __webpack_require__(/*! ./Component */ 159);
+	var _componentsChartJsx = __webpack_require__(/*! ./components/Chart.jsx */ 159);
 
-	var _Component2 = _interopRequireDefault(_Component);
+	var _componentsChartJsx2 = _interopRequireDefault(_componentsChartJsx);
 
 	window.onload = function () {
-	  _reactDom2['default'].render(_react2['default'].createElement(_Component2['default'], null), document.querySelector('#wrapper'));
+	    _reactDom2['default'].render(_react2['default'].createElement(_componentsChartJsx2['default']), document.querySelector('#app'));
 	};
 
 /***/ },
@@ -20107,9 +20107,106 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 159 */
-/*!***************************!*\
-  !*** ./src/Component.jsx ***!
-  \***************************/
+/*!**********************************!*\
+  !*** ./src/components/Chart.jsx ***!
+  \**********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	    value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(/*! react */ 2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _ChartListJsx = __webpack_require__(/*! ./ChartList.jsx */ 160);
+
+	var _ChartListJsx2 = _interopRequireDefault(_ChartListJsx);
+
+	var _ChartFormJsx = __webpack_require__(/*! ./ChartForm.jsx */ 162);
+
+	var _ChartFormJsx2 = _interopRequireDefault(_ChartFormJsx);
+
+	var _AddRowButtonJsx = __webpack_require__(/*! ./AddRowButton.jsx */ 163);
+
+	var _AddRowButtonJsx2 = _interopRequireDefault(_AddRowButtonJsx);
+
+	console.log(_react2['default'].PropTypes.func);
+
+	var Chart = (function (_React$Component) {
+	    _inherits(Chart, _React$Component);
+
+	    _createClass(Chart, null, [{
+	        key: 'propTypes',
+	        value: {
+	            onRender: _react2['default'].PropTypes.func
+	        },
+	        enumerable: true
+	    }]);
+
+	    function Chart() {
+	        _classCallCheck(this, Chart);
+
+	        _get(Object.getPrototypeOf(Chart.prototype), 'constructor', this).call(this);
+
+	        var itemsList = [{ key: 1, title: 'Webpack', description: 'Bundler', votes: 150 }, { key: 2, title: 'Unit Testing', description: 'Jasmine', votes: 255 }, { key: 3, title: 'Web Technelogy', description: 'HTML5', votes: 366 }];
+
+	        this.state = {
+	            itemsList: itemsList
+	        };
+	    }
+
+	    _createClass(Chart, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2['default'].createElement(
+	                'div',
+	                null,
+	                _react2['default'].createElement(
+	                    'div',
+	                    { className: 'jumbotron text-center' },
+	                    _react2['default'].createElement(
+	                        'h1',
+	                        null,
+	                        'Chart'
+	                    )
+	                ),
+	                _react2['default'].createElement(
+	                    'div',
+	                    { className: 'container' },
+	                    _react2['default'].createElement(_AddRowButtonJsx2['default'], null)
+	                ),
+	                _react2['default'].createElement(_ChartFormJsx2['default'], null),
+	                _react2['default'].createElement('br', null),
+	                _react2['default'].createElement(_ChartListJsx2['default'], { items: this.state.itemsList })
+	            );
+	        }
+	    }]);
+
+	    return Chart;
+	})(_react2['default'].Component);
+
+	exports['default'] = Chart;
+	module.exports = exports['default'];
+
+/***/ },
+/* 160 */
+/*!**************************************!*\
+  !*** ./src/components/ChartList.jsx ***!
+  \**************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20118,33 +20215,253 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var _react = __webpack_require__(/*! react */ 2);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var Component = _react2['default'].createClass({
-	  displayName: 'Component',
+	var _ChartItemJsx = __webpack_require__(/*! ./ChartItem.jsx */ 161);
 
-	  render: function render() {
-	    if (this.props.onRender) {
-	      this.props.onRender();
-	    }
+	var _ChartItemJsx2 = _interopRequireDefault(_ChartItemJsx);
 
-	    return _react2['default'].createElement(
-	      'p',
-	      null,
-	      'Hello World!'
-	    );
-	  },
-	  propTypes: {
-	    onRender: _react2['default'].PropTypes.func
+	var ChartList = (function (_React$Component) {
+	  _inherits(ChartList, _React$Component);
+
+	  function ChartList() {
+	    _classCallCheck(this, ChartList);
+
+	    _get(Object.getPrototypeOf(ChartList.prototype), 'constructor', this).apply(this, arguments);
 	  }
+
+	  _createClass(ChartList, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2['default'].createElement(
+	        'ul',
+	        { className: 'list-group container' },
+	        this.props.items.map(function (item) {
+	          return _react2['default'].createElement(_ChartItemJsx2['default'], {
+	            key: item.key,
+	            title: item.title,
+	            desc: item.description,
+	            votes: item.votes
+	          });
+	        })
+	      );
+	    }
+	  }]);
+
+	  return ChartList;
+	})(_react2['default'].Component);
+
+	exports['default'] = ChartList;
+	module.exports = exports['default'];
+
+/***/ },
+/* 161 */
+/*!**************************************!*\
+  !*** ./src/components/ChartItem.jsx ***!
+  \**************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
 	});
 
-	exports['default'] = Component;
-	module.exports = exports['default'];
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(/*! react */ 2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var ChartItem = (function (_React$Component) {
+	  _inherits(ChartItem, _React$Component);
+
+	  function ChartItem() {
+	    _classCallCheck(this, ChartItem);
+
+	    _get(Object.getPrototypeOf(ChartItem.prototype), "constructor", this).apply(this, arguments);
+	  }
+
+	  _createClass(ChartItem, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2["default"].createElement(
+	        "li",
+	        { className: "list-group-item" },
+	        _react2["default"].createElement(
+	          "span",
+	          { className: "badge badge-success" },
+	          this.props.votes
+	        ),
+	        _react2["default"].createElement(
+	          "h4",
+	          null,
+	          this.props.title
+	        ),
+	        _react2["default"].createElement(
+	          "span",
+	          null,
+	          this.props.desc
+	        ),
+	        _react2["default"].createElement(
+	          "span",
+	          { className: "pull-right" },
+	          _react2["default"].createElement(
+	            "button",
+	            { id: "up", className: "btn btn-sm btn-primary" },
+	            "UP"
+	          ),
+	          _react2["default"].createElement(
+	            "button",
+	            { id: "down", className: "btn btn-sm btn-primary" },
+	            "DOWN"
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return ChartItem;
+	})(_react2["default"].Component);
+
+	exports["default"] = ChartItem;
+	module.exports = exports["default"];
+
+/***/ },
+/* 162 */
+/*!**************************************!*\
+  !*** ./src/components/ChartForm.jsx ***!
+  \**************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(/*! react */ 2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var ChartForm = (function (_React$Component) {
+	  _inherits(ChartForm, _React$Component);
+
+	  function ChartForm() {
+	    _classCallCheck(this, ChartForm);
+
+	    _get(Object.getPrototypeOf(ChartForm.prototype), "constructor", this).apply(this, arguments);
+	  }
+
+	  _createClass(ChartForm, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2["default"].createElement(
+	        "form",
+	        { className: "container" },
+	        _react2["default"].createElement(
+	          "div",
+	          { className: "form-group" },
+	          _react2["default"].createElement("input", { type: "text", className: "form-control", placeholder: "Title" }),
+	          _react2["default"].createElement("input", { type: "text", className: "form-control", placeholder: "Description" }),
+	          _react2["default"].createElement(
+	            "button",
+	            { className: "btn btn-primary btn-block", type: "submit" },
+	            "+ Add"
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return ChartForm;
+	})(_react2["default"].Component);
+
+	exports["default"] = ChartForm;
+	module.exports = exports["default"];
+
+/***/ },
+/* 163 */
+/*!*****************************************!*\
+  !*** ./src/components/AddRowButton.jsx ***!
+  \*****************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(/*! react */ 2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var ShowAddButton = (function (_React$Component) {
+	  _inherits(ShowAddButton, _React$Component);
+
+	  function ShowAddButton() {
+	    _classCallCheck(this, ShowAddButton);
+
+	    _get(Object.getPrototypeOf(ShowAddButton.prototype), "constructor", this).apply(this, arguments);
+	  }
+
+	  _createClass(ShowAddButton, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2["default"].createElement(
+	        "button",
+	        { className: "btn btn-success btn-block" },
+	        "+ Add Row"
+	      );
+	    }
+	  }]);
+
+	  return ShowAddButton;
+	})(_react2["default"].Component);
+
+	exports["default"] = ShowAddButton;
+	module.exports = exports["default"];
 
 /***/ }
 /******/ ])

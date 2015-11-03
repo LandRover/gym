@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Component from './Component';
+import Chart from './components/Chart.jsx';
 
 window.onload = () => {
-  ReactDOM.render(<Component />, document.querySelector('#app'));
+    ReactDOM.render(
+        React.createElement(Chart),
+        document.querySelector('#app')
+    );
 };

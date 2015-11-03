@@ -40,7 +40,7 @@ module.exports = function (config) {
       
       module: {
         loaders: [
-            {test: /(\.jsx|\.js)$/, exclude: /node_modules/, loader: 'babel-loader'}
+            {test: /(\.jsx|\.js)$/, exclude: /node_modules/, loader: 'babel-loader', query: {stage: 1}}
         ]
       }
     },

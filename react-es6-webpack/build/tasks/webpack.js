@@ -27,7 +27,7 @@ module.exports = function(grunt, options) {
             module: {
                 loaders: [
                     {test: /\.css$/, loader: 'style!css'},
-                    {test: /(\.jsx|\.js)$/, exclude: /node_modules/, loader: 'babel-loader'},
+                    {test: /(\.jsx|\.js)$/, exclude: /node_modules/, loader: 'babel-loader', query: {stage: 1}},
                     {test: /\.html$/, exclude: /node_modules/, loader: 'html-loader'},
                     {test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000'}
                 ]
