@@ -1,6 +1,6 @@
 {
   "name": "react-es6-starter",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "description": "Bootstrap for a fresh react project",
   "main": "public/js/index.js",
   "scripts": {
@@ -18,10 +18,23 @@
   },
   "homepage": "https://github.com/LandRover/react-es6-starter",
   
+  "jspm": {
+    "dependencies": {
+      "bootstrap": "github:twbs/bootstrap@~3.3.5",
+      "jsx": "github:floatdrop/plugin-jsx@~1.1.0",
+      "react": "npm:react@~0.14.2"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@~6.1.1",
+      "babel-runtime": "npm:babel-runtime@~6.0.14",
+      "core-js": "npm:core-js@~1.2.5"
+    }
+  },
+  
   "dependencies": {
-    "react": "~0.14.0",
-    "react-addons-test-utils": "~0.14.0",
-    "react-dom": "~0.14.0",
+    "react": "~0.14.2",
+    "react-addons-test-utils": "~0.14.2",
+    "react-dom": "~0.14.2",
     "react-hot-loader": "~1.1.5"
   },
   
@@ -38,32 +51,59 @@
     "load-grunt-tasks": "~3.1.0",
     "time-grunt": "~1.0.0",
     
-    "html-loader": "0.3.0",
-    "url-loader": "0.5.6",
-    "babel-loader": "5.3.2",
+   
+    "babel": "~6.0.15",
+    "babel-core": "~6.0.20",
+    "html-loader": "~0.3.0",
+    "url-loader": "~0.5.6",
+    "babel-loader": "~6.0.1",
     "exports-loader": "~0.6.2",
     "imports-loader": "~0.6.3",
     "expose-loader": "~0.7.0",
     "script-loader": "~0.6.1",
     
-    "chai": "~3.3.0",
-    "core-js": "~1.1.4",
+    "chai": "~3.4.0",
+    "core-js": "~1.2.5",
     "eslint": "~1.4.3",
     "eslint-loader": "~1.0.0",
     "eslint-plugin-react": "~3.4.1",
+    "rimraf": "~2.4.3",
+    "require-dir": "~0.3.0",
+    "browser-sync": "~2.9.11",
+    "run-sequence": "~1.1.4",
 
+    "mocha": "~2.3.3",
     "karma": "~0.13.10",
     "karma-chai": "~0.1.0",
     "karma-chai-plugins": "~0.6.0",
     "karma-chai-sinon": "~0.1.5",
-    "karma-chrome-launcher": "~0.2.0",
+    "karma-chrome-launcher": "~0.2.1",
+    "karma-firefox-launcher": "~0.1.6",
+    "karma-phantomjs-launcher": "~0.2.1",
     "karma-mocha": "~0.2.0",
     "karma-mocha-reporter": "~1.1.1",
-    "karma-phantomjs-launcher": "~0.2.1",
     "karma-sinon": "~1.0.4",
     "karma-sinon-chai": "~1.1.0",
     "karma-sourcemap-loader": "~0.3.5",
+    "karma-jspm": "~2.0.2",
     "karma-webpack": "~1.7.0",
-    "webpack-dev-server": "1.11.0"
+    "webpack-dev-server": "1.11.0",
+    
+    "gulp": "~3.9.0",
+    "gulp-autoprefixer": "~3.1.0",
+    "gulp-cached": "~1.1.0",
+    "gulp-concat": "~2.6.0",
+    "gulp-csso": "~1.0.1",
+    "gulp-html-replace": "~1.5.4",
+    "gulp-inject": "~3.0.0",
+    "gulp-jspm": "~0.5.4",
+    "gulp-load-plugins": "~1.0.0",
+    "gulp-rename": "~1.2.2",
+    "gulp-sass": "~2.1.0",
+    "gulp-shell": "~0.5.1",
+    "gulp-sourcemaps": "~1.6.0",
+    "gulp-uglify": "~1.4.2",
+    "gulp-util": "~3.0.7",
+    "gulp-watch": "~4.3.5"
   }
 }
