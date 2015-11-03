@@ -16,7 +16,7 @@
     
     // init grunt
     require('load-grunt-config')(grunt, {
-        configPath: path.join(cwd, 'build/tasks'),
+        configPath: path.join(cwd, 'grunt/tasks'),
         
         config: {
             pkg: grunt.file.readJSON('package.json'),
@@ -40,7 +40,7 @@
                     }
                 },
                 
-                banner: require('fs').readFileSync(path.join(cwd, 'build/banner.txt'), 'utf8')
+                banner: require('fs').readFileSync(path.join(cwd, 'grunt/banner.txt'), 'utf8')
             }
         }
     });

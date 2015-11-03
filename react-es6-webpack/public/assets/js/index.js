@@ -20144,8 +20144,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _AddRowButtonJsx2 = _interopRequireDefault(_AddRowButtonJsx);
 
-	console.log(_react2['default'].PropTypes.func);
-
 	var Chart = (function (_React$Component) {
 	    _inherits(Chart, _React$Component);
 
@@ -20172,6 +20170,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    _createClass(Chart, [{
 	        key: 'render',
 	        value: function render() {
+	            // execute prop when done rendering. Used in unit tested to count invokes
+	            if (this.props.onRender) {
+	                this.props.onRender();
+	            }
+
 	            return _react2['default'].createElement(
 	                'div',
 	                null,
