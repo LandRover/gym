@@ -4,7 +4,7 @@ import ChartList from './ChartList.jsx';
 import ChartForm from './ChartForm.jsx';
 import AddRowButton from './AddRowButton.jsx';
 
-export default class Chart extends React.Component {
+class Chart extends React.Component {
     static propTypes = {
         onRender: React.PropTypes.func
     }
@@ -49,3 +49,5 @@ export default class Chart extends React.Component {
         );
     }
 }
+
+export default Chart;

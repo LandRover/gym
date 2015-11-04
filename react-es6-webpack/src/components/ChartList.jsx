@@ -1,7 +1,7 @@
 import React from 'react';
 import ChartItem from './ChartItem.jsx';
 
-export default class ChartList extends React.Component {
+class ChartList extends React.Component {
   render() {
     return (
       <ul className="list-group container">
@@ -19,3 +19,5 @@ export default class ChartList extends React.Component {
     );
   }
 }
+
+export default ChartList;

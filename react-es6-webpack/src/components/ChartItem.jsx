@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class ChartItem extends React.Component {
+class ChartItem extends React.Component {
   render() {
     return (
       <li className="list-group-item">
@@ -17,3 +17,5 @@ export default class ChartItem extends React.Component {
     );
   }
 }
+
+export default ChartItem;

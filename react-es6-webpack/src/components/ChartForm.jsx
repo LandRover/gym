@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class ChartForm extends React.Component {
+class ChartForm extends React.Component {
   render() {
     return (
       <form className="container">
@@ -15,3 +15,5 @@ export default class ChartForm extends React.Component {
     );
   }
 }
+
+export default ChartForm;
