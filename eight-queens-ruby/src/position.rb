@@ -4,7 +4,7 @@ require_relative('game/board')
 require_relative('game/queen')
 
 @debug = false
-@solved = false
+@solutions = []
 @board = Board.new
 
 def position_queen(x)
@@ -18,27 +18,40 @@ def position_queen(x)
             
             if (x == @board.rows_end)
                 puts "[*] Solution Finalized\n" if @debug
-                @solved = true
-                return
+                solution_save(@board)
             else
+                # go to the the next column
                 position_queen(x + 1)
-                return if @solved
             end
             
-            puts "[-] Queen being removed ##{x+1}"
+            puts "[-] Queen ##{x+1} being removed" if @debug
             @board.queen_remove(x, y)
         else
-            puts "[x] Conflict detected Queen ##{x} at (#{x}, #{y})"
+            puts "[x] Conflict detected Queen ##{x+1} at (#{x}, #{y})" if @debug
             next
         end
     end
+    
+    puts "[x] No solution found for Queen ##{x+1}" if @debug
 end
+
+def solution_save(board)
+    ## Create a copy of the current board and save it.
+    solution = Board.new
+    solution.queens = board.queens.map(&:dup)
+    @solutions << solution
+end
+
 
 position_queen(0)
 
-if (@solved)
-    puts "\nFound Solution:"
-    @board.render
+
+if !@solutions.empty?
+    @solutions.each_with_index do |board, idx|
+      puts "\n Solution ##{idx+1}:"
+      board.render
+    end
+    
 else
     puts "\nNothing found!"
 end
