@@ -75,6 +75,14 @@ class Board
     end
     
     
+    def valid_position(x, y)
+        return false unless safe_x?(x)
+        return false unless safe_y?(y)
+        return false unless safe_diagonal?(x, y)
+        return true
+    end
+    
+    
     private
         
         def queen_find(x, y)
@@ -84,5 +92,22 @@ class Board
         
         def queen_at(x, y)
             queen_find(x, y) || @@EDGE_CELL_SEPERATOR
+        end
+        
+        
+        def safe_x?(x)
+            @queens.none? {|q| x == q.x}
+        end
+        
+        
+        def safe_y?(y)
+            @queens.none? {|q| y == q.y}
+        end
+        
+        
+        def safe_diagonal?(x, y)
+            @queens.none? do |q|
+                (q.x - x).abs == (q.y - y).abs
+            end
         end
 end
