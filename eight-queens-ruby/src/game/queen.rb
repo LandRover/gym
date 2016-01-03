@@ -14,4 +14,5 @@ class Queen
     end
     
     
+    
 end
