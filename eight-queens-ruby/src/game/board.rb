@@ -6,7 +6,7 @@ class Board
     DEFUALT_SIZE = 8
     
     
-    @@EDGE_HORIZONAL = '='
+    @@EDGE_HORIZONAL = '-'
     @@EDGE_VERTICAL = '|';
     @@EDGE_CELL_SEPERATOR = '.';
 
