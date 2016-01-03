@@ -6,8 +6,8 @@ class Board
     DEFUALT_SIZE = 8
     
     
-    @@EDGE_HORIZONAL = '|'
-    @@EDGE_VERTICAL = '=';
+    @@EDGE_HORIZONAL = '='
+    @@EDGE_VERTICAL = '|';
     @@EDGE_CELL_SEPERATOR = '.';
 
     
@@ -44,7 +44,7 @@ class Board
         rows_total.times do |y|
             print @@EDGE_VERTICAL
             
-            columns_total.rows do |x|
+            columns_total.times do |x|
                 print queen_at(x, y)
             end
             
