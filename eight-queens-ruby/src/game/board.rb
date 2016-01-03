@@ -75,7 +75,7 @@ class Board
     end
     
     
-    def valid_position(x, y)
+    def valid_position?(x, y)
         return false unless safe_x?(x)
         return false unless safe_y?(y)
         return false unless safe_diagonal?(x, y)
