@@ -3,7 +3,7 @@
 require_relative('game/board')
 require_relative('game/queen')
 
-@debug = true
+@debug = false
 @solved = false
 @board = Board.new
 
@@ -35,3 +35,10 @@ def position_queen(x)
 end
 
 position_queen(0)
+
+if (@solved)
+    puts "\nFound Solution:"
+    @board.render
+else
+    puts "\nNothing found!"
+end
