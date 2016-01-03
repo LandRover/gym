@@ -4,6 +4,9 @@ class Queen
     attr_accessor :x, :y
     
     
+    @@symbol = 'Q'
+    
+    
     def location
         [x, y]
     end
@@ -13,6 +16,10 @@ class Queen
         [x, y] == location
     end
     
+    
+    def to_s
+        @@symbol
+    end
     
     
 end

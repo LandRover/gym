@@ -1,11 +1,15 @@
 class Board
     
+    attr_accessor :queens
+    
     
     DEFUALT_SIZE = 8
     
     
-    attr_accessor :queens
-    
+    @@EDGE_HORIZONAL = '|'
+    @@EDGE_VERTICAL = '=';
+    @@EDGE_CELL_SEPERATOR = '.';
+
     
     def initialize()
         @size = DEFUALT_SIZE
@@ -32,6 +36,24 @@ class Board
         rows_total - 1
     end
     
+    def render
+        header = @@EDGE_HORIZONAL * (columns_total + 2)
+        
+        puts
+        puts header
+        rows_total.times do |y|
+            print @@EDGE_VERTICAL
+            
+            columns_total.rows do |x|
+                print queen_at(x, y)
+            end
+            
+            puts @@EDGE_VERTICAL
+        end
+        
+        puts header
+        puts
+    end
     
     def queen_add(x=0, y=0)
         queen = Queen.new
@@ -57,5 +79,10 @@ class Board
         
         def queen_find(x, y)
             @queens.detect {|q| q.location?(x, y)}
+        end
+        
+        
+        def queen_at(x, y)
+            queen_find(x, y) || @@EDGE_CELL_SEPERATOR
         end
 end
