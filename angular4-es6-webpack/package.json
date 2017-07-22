@@ -1,5 +1,5 @@
 {
-  "name": "lastfm-search",
+  "name": "angular4-es6-webpack",
   "version": "0.0.1",
   "description": "## What is it?",
   "main": "index.js",
@@ -103,7 +103,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LandRover/LastFM-Search.git"
+    "url": "git+https://github.com/LandRover/Kata.git"
   },
-  "homepage": "https://github.com/LandRover/LastFM-Search#readme"
+  "homepage": "https://github.com/LandRover/Kata/angular4-es6-webpack#readme"
 }
