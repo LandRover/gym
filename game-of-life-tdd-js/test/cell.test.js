@@ -44,4 +44,18 @@ describe('Cell', () => {
         expect(nextStateWith3Neighbors).toBe(CellState.ALIVE);
     });
 
+    test('Should die with more than 3 neighbours', () => {
+        const cell = new Cell(CellState.ALIVE);
+
+        const nextStateWith4Neighbors = cell.getNextState(4);
+        expect(nextStateWith4Neighbors).toBe(CellState.DEAD);
+    });
+
+    test('Should come alive with exactly 3 neighbours', () => {
+        const cell = new Cell(CellState.DEAD);
+
+        const nextStateWith3Neighbors = cell.getNextState(3);
+        expect(nextStateWith3Neighbors).toBe(CellState.ALIVE);
+    });
+
 });
