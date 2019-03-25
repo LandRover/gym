@@ -15,6 +15,13 @@ describe('Cell', () => {
         expect(() => {
             const cell = new Cell(null);
         }).toThrow();
-    })
+    });
+
+    test('Should die if it has fewer than 2 live neighbours', () => {
+        const cell = new Cell(CellState.ALIVE);
+
+        const nextStateWith0Neighbors = cell.getNextState(0);
+        expect(nextStateWith0Neighbors).toBe(CellState.DEAD);
+    });
 
 });

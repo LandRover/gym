@@ -9,4 +9,8 @@ export default class Cell {
         this.state = state;
     }
 
+    getNextState(neighboursCount) {
+        return CellState.DEAD;
+    }
+
 }
