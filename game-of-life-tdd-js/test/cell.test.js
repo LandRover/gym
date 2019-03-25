@@ -24,4 +24,24 @@ describe('Cell', () => {
         expect(nextStateWith0Neighbors).toBe(CellState.DEAD);
     });
 
+    test('Should stay dead if it has fewer than 2 neighbors', () => {
+        const cell = new Cell(CellState.DEAD);
+
+        const nextStateWith0Neighbors = cell.getNextState(0);
+        expect(nextStateWith0Neighbors).toBe(CellState.DEAD);
+
+        const nextStateWith1Neighbors = cell.getNextState(1);
+        expect(nextStateWith1Neighbors).toBe(CellState.DEAD);
+    });
+
+    test('Should live with 2 or 3 live neighbours', () => {
+        const cell = new Cell(CellState.DEAD);
+
+        const nextStateWith2Neighbors = cell.getNextState(2);
+        expect(nextStateWith2Neighbors).toBe(CellState.ALIVE);
+
+        const nextStateWith3Neighbors = cell.getNextState(3);
+        expect(nextStateWith3Neighbors).toBe(CellState.ALIVE);
+    });
+
 });
