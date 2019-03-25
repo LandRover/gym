@@ -11,4 +11,10 @@ describe('Cell', () => {
         expect(cellDead.state).toBe(CellState.DEAD);
     });
 
+    test('Should throw an Error if not initialized with valid CellState', () => {
+        expect(() => {
+            const cell = new Cell(null);
+        }).toThrow();
+    })
+
 });
