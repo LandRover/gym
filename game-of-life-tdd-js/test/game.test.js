@@ -46,4 +46,20 @@ describe('Game', () => {
         expect(neighboursCount).toBe(8);
     });
 
+
+    test('Should get the number of alive neighbours above and below row', () => {
+        const gameState = [
+            [ALIVE, ALIVE, ALIVE],
+            [DEAD, DEAD, DEAD],
+            [ALIVE, ALIVE, ALIVE],
+        ];
+
+        const game = new Game(gameState);
+
+        const neighboursCount = game.getNumberOfAlive(1, 1);
+        expect(neighboursCount).toBe(6);
+    });
+
+
+
 });
