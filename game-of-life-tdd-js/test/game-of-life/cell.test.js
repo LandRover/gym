@@ -1,5 +1,5 @@
-import Cell from '../src/cell';
-import CellState from '../src/cell_state';
+import Cell from '../../src/game-of-life/cell';
+import CellState from '../../src/game-of-life/cell_state';
 
 describe('Cell', () => {
 

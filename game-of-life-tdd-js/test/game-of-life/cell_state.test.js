@@ -1,4 +1,4 @@
-import CellState from '../src/cell_state';
+import CellState from '../../src/game-of-life/cell_state';
 
 describe('CellState', () => {
 
