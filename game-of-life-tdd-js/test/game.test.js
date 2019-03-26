@@ -61,6 +61,17 @@ describe('Game', () => {
     });
 
 
+    test('Should get the number of alive neighbours with a cyclic border', () => {
+        const gameState = [
+            [ALIVE, DEAD, ALIVE],
+            [DEAD, DEAD, DEAD],
+            [ALIVE, DEAD, DEAD],
+        ];
 
+        const game = new Game(gameState);
+
+        const neighboursCount = game.getNumberOfAlive(0, 0);
+        expect(neighboursCount).toBe(2);
+    });
 
 });
