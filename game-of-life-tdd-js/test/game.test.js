@@ -113,7 +113,7 @@ describe('Game', () => {
 
         const nextGridState = game.getNextGridState();
 
-        const expectedGridstate = [
+        const expectedGridState = [
             [new Cell(DEAD), new Cell(DEAD), new Cell(DEAD), new Cell(DEAD), new Cell(DEAD)],
             [new Cell(DEAD), new Cell(DEAD), new Cell(DEAD), new Cell(DEAD), new Cell(DEAD)],
             [new Cell(DEAD), new Cell(ALIVE), new Cell(ALIVE), new Cell(ALIVE), new Cell(DEAD)],
@@ -121,7 +121,10 @@ describe('Game', () => {
             [new Cell(DEAD), new Cell(DEAD), new Cell(DEAD), new Cell(DEAD), new Cell(DEAD)],
         ];
 
-        expect(nextGridState).toEqual(expectedGridstate);
+        expect(nextGridState).toEqual(expectedGridState);
+
+        game.nextGeneration();
+        expect(game.grid).toEqual(expectedGridState);
     });
 
 });

@@ -50,4 +50,9 @@ export default class Game {
             return new Cell(nextState);
         }));
     }
+
+
+    nextGeneration() {
+        return this.grid = this.getNextGridState();
+    }
 }
