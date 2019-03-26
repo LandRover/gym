@@ -99,4 +99,29 @@ describe('Game', () => {
         expect(numberOfNeighbours).toBe(8);
     });
 
+
+    test('Should create the next state of the game grid - blinker example', () => {
+        const gameGrid = [
+            [DEAD, DEAD, DEAD,],
+            [DEAD, ALIVE, DEAD],
+            [DEAD, ALIVE, DEAD],
+            [DEAD, ALIVE, DEAD],
+            [DEAD, DEAD, DEAD,],
+        ];
+
+        const game = new Game(gameGrid);
+
+        const nextGridState = game.getNextGridState();
+
+        const expectedGridstate = [
+            [new Cell(DEAD), new Cell(DEAD), new Cell(DEAD)],
+            [new Cell(DEAD), new Cell(DEAD), new Cell(DEAD)],
+            [new Cell(ALIVE), new Cell(ALIVE), new Cell(ALIVE)],
+            [new Cell(DEAD), new Cell(DEAD), new Cell(DEAD)],
+            [new Cell(DEAD), new Cell(DEAD), new Cell(DEAD)],
+        ];
+
+        expect(nextGridState).toEqual(expectedGridstate);
+    });
+
 });

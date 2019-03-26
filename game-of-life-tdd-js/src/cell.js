@@ -10,10 +10,22 @@ export default class Cell {
     }
 
     getNextState(neighboursCount) {
-        if (2 <= neighboursCount && 3 >= neighboursCount)
-            return CellState.ALIVE;
+        if (CellState.DEAD === this.state) {
+            if (3 === neighboursCount) {
+                return CellState.ALIVE;
+            }
 
-        return CellState.DEAD;
+            return CellState.DEAD;
+        } else
+            if (CellState.ALIVE === this.state) {
+                if (2 > neighboursCount || 3 < neighboursCount) {
+                    return CellState.DEAD;
+                }
+
+                return CellState.ALIVE;
+            }
     }
+
+
 
 }

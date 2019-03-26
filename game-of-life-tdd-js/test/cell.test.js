@@ -35,7 +35,7 @@ describe('Cell', () => {
     });
 
     test('Should live with 2 or 3 live neighbours', () => {
-        const cell = new Cell(CellState.DEAD);
+        const cell = new Cell(CellState.ALIVE);
 
         const nextStateWith2Neighbors = cell.getNextState(2);
         expect(nextStateWith2Neighbors).toBe(CellState.ALIVE);

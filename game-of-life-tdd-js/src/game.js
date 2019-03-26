@@ -40,4 +40,14 @@ export default class Game {
 
         return sum;
     }
+
+
+    getNextGridState() {
+        return this.grid.map((row, rowNum) => row.map((cell, colNum) => {
+            let aliveNeighbours = this.getNumberOfAlive(rowNum, colNum);
+            let nextState = cell.getNextState(aliveNeighbours);
+
+            return new Cell(nextState);
+        }));
+    }
 }
