@@ -27,8 +27,8 @@ export default class Game {
 
         for (let rowOffset = - 1; rowOffset < 2; rowOffset++) {
             for (let cellOffset = - 1; cellOffset < 2; cellOffset++) {
-                let x = (row + rowOffset + this.numRows) % this.numRows,
-                    y = (col + cellOffset + this.numCols) % this.numCols;
+                let x = (row + rowOffset),
+                    y = (col + cellOffset);
 
                 let cell = this.getCell(x, y);
 
