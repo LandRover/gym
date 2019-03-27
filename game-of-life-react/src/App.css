@@ -1,7 +1,13 @@
 .App {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-table {
-  width: 80%;
+table .cell {
+  outline: 1px solid black;
+  width: 30px;
+  height: 30px;
 }

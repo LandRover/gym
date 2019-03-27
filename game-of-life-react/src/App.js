@@ -31,7 +31,12 @@ class App extends Component {
               <tr key={rowNumber}>
                 {
                   row.map((cell, colNumber) => (
-                    <td key={colNumber} className="cell">x</td>
+                    <td key={colNumber}
+                      className="cell"
+                      style={{
+                        background: ALIVE === cell.state ? 'black' : 'white'
+                      }}
+                    ></td>
                   ))
                 }
               </tr>
