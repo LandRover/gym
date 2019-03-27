@@ -1,6 +1,6 @@
-import Game from '../../src/game-of-life/game';
-import Cell from '../../src/game-of-life/cell';
-import CellState from '../../src/game-of-life/cell_state';
+import Game from '../src/game';
+import Cell from '../src/cell';
+import CellState from '../src/cell_state';
 const { DEAD, ALIVE } = CellState;
 
 const gridDead = [
