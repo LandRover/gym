@@ -20,29 +20,41 @@ class App extends Component {
     grid: game.grid
   }
 
+  nextGeneration = () => {
+    const nextGeneration = game.nextGeneration();
+
+    this.setState({
+      grid: nextGeneration
+    });
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Conway's Game of Life</h1>
 
         <table>
-          {
-            this.state.grid.map((row, rowNumber) => (
-              <tr key={rowNumber}>
-                {
-                  row.map((cell, colNumber) => (
-                    <td key={colNumber}
-                      className="cell"
-                      style={{
-                        background: ALIVE === cell.state ? 'black' : 'white'
-                      }}
-                    ></td>
-                  ))
-                }
-              </tr>
-            ))
-          }
+          <tbody>
+            {
+              this.state.grid.map((row, rowNumber) => (
+                <tr key={rowNumber}>
+                  {
+                    row.map((cell, colNumber) => (
+                      <td key={colNumber}
+                        className="cell"
+                        style={{
+                          background: ALIVE === cell.state ? 'black' : 'white'
+                        }}
+                      ></td>
+                    ))
+                  }
+                </tr>
+              ))
+            }
+          </tbody>
         </table>
+
+        <button onClick={this.nextGeneration}>Next Generation</button>
       </div>
     );
   }
