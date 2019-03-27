@@ -1,19 +1,11 @@
 import React, { Component } from 'react';
-import GameOfLifeTDD from '../../game-of-life-tdd-js/';
+import GameOfLifeTDD from '../../game-of-life-tdd-js';
 import './GameOfLife.css';
 
 const { CellState, Game } = GameOfLifeTDD;
 const { DEAD, ALIVE } = CellState;
 
-const initialGrid = [
-    [DEAD, DEAD, DEAD, DEAD, DEAD],
-    [DEAD, DEAD, ALIVE, DEAD, DEAD],
-    [DEAD, DEAD, ALIVE, DEAD, DEAD],
-    [DEAD, DEAD, ALIVE, DEAD, DEAD],
-    [DEAD, DEAD, DEAD, DEAD, DEAD],
-];
-
-const game = new Game(initialGrid);
+const game = new Game(16, 16);
 
 class GameOfLife extends Component {
     state = {
