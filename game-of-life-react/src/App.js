@@ -28,6 +28,16 @@ class App extends Component {
     });
   }
 
+  cellStateToggle = (row, col) => {
+    let cell = game.getCell(row, col);
+
+    cell.state = ALIVE === cell.state ? DEAD : ALIVE;
+
+    this.setState({
+      grid: game.grid
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -42,6 +52,7 @@ class App extends Component {
                     row.map((cell, colNumber) => (
                       <td key={colNumber}
                         className="cell"
+                        onClick={() => this.cellStateToggle(rowNumber, colNumber)}
                         style={{
                           background: ALIVE === cell.state ? 'black' : 'white'
                         }}
