@@ -16,7 +16,7 @@ export default class Game {
 
 
     resetGrid() {
-        this.grid = Array(this.numRows).fill(0).map(() => Array(this.numCols).fill(new Cell(CellState.DEAD)));
+        this.grid = this._updateGrid(CellState.DEAD);
         return this;
     }
 
@@ -26,6 +26,16 @@ export default class Game {
 
         return this;
     }
+
+    randomizeGrid() {
+        this.grid = this._updateGrid(this.randomCellState());
+        return this;
+    }
+
+    _updateGrid(state) {
+        return Array(this.numRows).fill(0).map(() => Array(this.numCols).fill(new Cell(state)));
+    }
+
 
 
     randomCellState() {
