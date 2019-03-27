@@ -3,12 +3,33 @@ import CellState from './cell_state';
 
 
 export default class Game {
+    grid = [];
+    numRows = 16;
+    numCols = 16;
 
-    constructor(grid) {
-        this.numRows = grid.length;
-        this.numCols = grid[0].length;
+    constructor(rows, cols) {
+        this.numRows = rows;
+        this.numCols = cols;
 
+        this.resetGrid();
+    }
+
+
+    resetGrid() {
+        this.grid = Array(this.numRows).fill(0).map(() => Array(this.numCols).fill(new Cell(CellState.DEAD)));
+        return this;
+    }
+
+
+    setCustomGrid(grid) {
         this.grid = grid.map(row => row.map(cellState => new Cell(cellState)));
+
+        return this;
+    }
+
+
+    randomCellState() {
+        return Math.round(Math.random());
     }
 
 
