@@ -32,10 +32,10 @@ export default class Game {
         return this;
     }
 
+
     _updateGrid(state) {
         return Array(this.numRows).fill(0).map(() => Array(this.numCols).fill(new Cell(state)));
     }
-
 
 
     randomCellState() {
