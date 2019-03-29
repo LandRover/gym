@@ -34,7 +34,7 @@ export default class Game {
 
 
     _updateGrid(state) {
-        return Array(this.numRows).fill(0).map(() => Array(this.numCols).fill(new Cell(state)));
+        return [...Array(this.numRows)].map(() => [...Array(this.numRows)].map(() => new Cell(state)));
     }
 
 

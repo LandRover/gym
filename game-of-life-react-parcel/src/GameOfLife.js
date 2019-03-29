@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import GameOfLifeTDD from '../../game-of-life-tdd-js';
 import './GameOfLife.css';
 
-const { CellState, Game } = GameOfLifeTDD;
+const { CellState, Game, Cell } = GameOfLifeTDD;
 const { DEAD, ALIVE } = CellState;
 
 const game = new Game(16, 16);
+window.grid = game.grid;
 
 class GameOfLife extends Component {
     state = {
