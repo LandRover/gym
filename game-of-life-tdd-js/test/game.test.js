@@ -3,44 +3,55 @@ import Cell from '../src/cell';
 import CellState from '../src/cell_state';
 const { DEAD, ALIVE } = CellState;
 
-const gridDead = [
+const preDefinedGrid = [
     [DEAD, DEAD, DEAD],
-    [DEAD, DEAD, DEAD],
+    [DEAD, ALIVE, DEAD],
     [DEAD, DEAD, DEAD],
 ];
 
 describe('Game', () => {
+    test('Game should be able to initialize with a size', () => {
+        const GRID_SIZE = 16;
+        const game = new Game(GRID_SIZE, GRID_SIZE);
+
+        expect(game.grid.length).toEqual(GRID_SIZE);
+        expect(game.grid[0].length).toEqual(GRID_SIZE);
+    });
+
 
     test('Should be initialized with a given grid', () => {
         const expectedGrid = [
             [new Cell(DEAD), new Cell(DEAD), new Cell(DEAD)],
-            [new Cell(DEAD), new Cell(DEAD), new Cell(DEAD)],
+            [new Cell(DEAD), new Cell(ALIVE), new Cell(DEAD)],
             [new Cell(DEAD), new Cell(DEAD), new Cell(DEAD)],
         ];
 
-        const game = new Game(gridDead);
+        const game = new Game(3, 3);
+        game.setCustomGrid(preDefinedGrid);
 
         expect(game.grid).toEqual(expectedGrid);
     });
 
 
     test('Should retrieve a cell at a given row and column', () => {
-        const game = new Game(gridDead);
+        const game = new Game(3, 3);
+        game.setCustomGrid(preDefinedGrid);
         const cell = game.getCell(0, 0);
 
         expect(cell).toBeInstanceOf(Cell);
-        expect(cell.state).toBe(gridDead[0][0]);
+        expect(cell.state).toBe(preDefinedGrid[0][0]);
     });
 
 
     test('Should get the number of alive neighbours for a given cell', () => {
-        const gameState = [
+        const gameGrid = [
             [ALIVE, ALIVE, ALIVE],
             [ALIVE, ALIVE, ALIVE],
             [ALIVE, ALIVE, ALIVE],
         ];
 
-        const game = new Game(gameState);
+        const game = new Game(3, 3);
+        game.setCustomGrid(gameGrid);
 
         const neighboursCount = game.getNumberOfAlive(1, 1);
         expect(neighboursCount).toBe(8);
@@ -48,13 +59,14 @@ describe('Game', () => {
 
 
     test('Should get the number of alive neighbours above and below row', () => {
-        const gameState = [
+        const gameGrid = [
             [ALIVE, ALIVE, ALIVE],
             [DEAD, DEAD, DEAD],
             [ALIVE, ALIVE, ALIVE],
         ];
 
-        const game = new Game(gameState);
+        const game = new Game(3, 3);
+        game.setCustomGrid(gameGrid);
 
         const neighboursCount = game.getNumberOfAlive(1, 1);
         expect(neighboursCount).toBe(6);
@@ -62,13 +74,14 @@ describe('Game', () => {
 
 
     test('Should get the number of alive neighbours with a cyclic border', () => {
-        const gameState = [
+        const gameGrid = [
             [ALIVE, DEAD, ALIVE],
             [DEAD, DEAD, DEAD],
             [ALIVE, DEAD, DEAD],
         ];
 
-        const game = new Game(gameState);
+        const game = new Game(3, 3);
+        game.setCustomGrid(gameGrid);
 
         const neighboursCount = game.getNumberOfAlive(0, 0);
         expect(neighboursCount).toBe(2);
@@ -94,7 +107,9 @@ describe('Game', () => {
             [DEAD, ALIVE, ALIVE, ALIVE, DEAD, DEAD, DEAD, DEAD, DEAD, DEAD, DEAD, DEAD, DEAD, DEAD, DEAD, DEAD],
         ];
 
-        const game = new Game(gameGrid);
+        const game = new Game(16, 16);
+        game.setCustomGrid(gameGrid);
+
         const numberOfNeighbours = game.getNumberOfAlive(14, 2);
         expect(numberOfNeighbours).toBe(8);
     });
@@ -109,7 +124,8 @@ describe('Game', () => {
             [DEAD, DEAD, DEAD, DEAD, DEAD],
         ];
 
-        const game = new Game(gameGrid);
+        const game = new Game(5, 5);
+        game.setCustomGrid(gameGrid);
 
         const nextGridState = game.getNextGridState();
 
